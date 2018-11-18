@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="24000" started-at="2018-11-18T09:34:22Z" finished-at="2018-11-18T09:34:46Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="24000" started-at="2018-11-18T09:34:22Z" finished-at="2018-11-18T09:34:46Z">
+      <class name="tests.TC001_VerifyLeaveStatus">
+        <test-method status="PASS" signature="SampleReport()[pri:0, instance:tests.TC001_VerifyLeaveStatus@5702b3b1]" name="SampleReport" is-config="true" duration-ms="467" started-at="2018-11-18T09:34:22Z" finished-at="2018-11-18T09:34:23Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- SampleReport -->
+        <test-method status="PASS" signature="verifyLeaveStatus()[pri:0, instance:tests.TC001_VerifyLeaveStatus@5702b3b1]" name="verifyLeaveStatus" duration-ms="23497" started-at="2018-11-18T09:34:23Z" finished-at="2018-11-18T09:34:46Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyLeaveStatus -->
+      </class> <!-- tests.TC001_VerifyLeaveStatus -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
