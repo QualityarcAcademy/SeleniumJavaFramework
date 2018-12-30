@@ -5,7 +5,8 @@
     <classes>
       <class name="tests.TC001_VerifyLeaveStatus">
         <methods>
-          <include name="verifyLeaveStatus"/>
+          <include name="positiveLoginTest"/>
+          <include name="SampleReport"/>
         </methods>
       </class> <!-- tests.TC001_VerifyLeaveStatus -->
     </classes>

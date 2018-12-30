@@ -4,16 +4,27 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.InvalidElementStateException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 public class ReusableFunctions extends utils.Reporter {
 
-	public static RemoteWebDriver driver; 
+	public WebDriver driver;
 	public static Properties prop;
 	public String URL, browser;
 
@@ -31,17 +42,21 @@ public class ReusableFunctions extends utils.Reporter {
 
 	}
 
-	public RemoteWebDriver OpenApp() {
+	public WebDriver OpenBrowser() {
 		if(browser.equalsIgnoreCase("Chrome")) {
-			System.setProperty("webdriver.chrome.driver", "../drivers/chromedriver_win32/chromedriver.exe");
+			//System.setProperty("webdriver.chrome.driver", "../drivers/chromedriver_win32/chromedriver.exe");
+			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 		}else if(browser.equalsIgnoreCase("Firefox")) {
+			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 		}else {
-			driver = new InternetExplorerDriver();
+			WebDriverManager.edgedriver().setup();
+			driver = new EdgeDriver();
 		}
 		driver.get(URL);
 		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		return driver;
 
 	}
@@ -56,31 +71,38 @@ public class ReusableFunctions extends utils.Reporter {
 			e.printStackTrace();
 		}
 	}
-
-	public void enterByID(String ID, String text) {
-		driver.findElement(By.id(ID)).clear();
-		driver.findElementById(ID).sendKeys(text);
+	
+	
+	/**
+	 * Method used to type in given data into text fields
+	 * 
+	 * @param element
+	 * @param data
+	 */
+	public void typeInto(WebElement element, String data) {
+		try {
+			element.clear();
+			element.sendKeys(data);
+		} catch (InvalidElementStateException e) {
+			e.printStackTrace();
+		}catch(WebDriverException e) {
+			e.printStackTrace();
+		}
 	}
 
-	public void clickByID(String ID) {
-		driver.findElementById(ID).click();
+	public void click(WebElement element){
+		try {
+			//WebDriverWait wait = new WebDriverWait(this.driver, 10);
+			//wait.until(ExpectedConditions.elementToBeClickable(element));
+			element.click();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
 
 	}
 
-	public void clickByXpath(String xpath){
-		driver.findElementByXPath(xpath).click();
 
-	}
-
-	public String getTextByXpath(String xpath, String retrievedString) {
-		driver.findElementByXPath(xpath).getText();
-		return retrievedString;
-
-	}
-
-	public void clickByLinkText(String LnkTxt) {
-		driver.findElementByLinkText(LnkTxt).click();
-	}
 
 	@Override
 	public long takeSnap() {
