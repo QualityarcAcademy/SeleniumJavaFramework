@@ -1,7 +1,7 @@
 package pages;
 
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
@@ -10,7 +10,7 @@ import reusableLib.Orangehrm;
 
 public class DashboardPg extends Orangehrm {
 	
-	public DashboardPg(WebDriver driver){
+	public DashboardPg(RemoteWebDriver driver){
 		this.driver = driver;
 		PageFactory.initElements(this.driver, this);
 		

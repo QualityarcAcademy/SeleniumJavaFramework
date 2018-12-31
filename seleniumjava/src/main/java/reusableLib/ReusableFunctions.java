@@ -8,6 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.InvalidElementStateException;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
@@ -22,9 +23,11 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.qameta.allure.Attachment;
+import io.qameta.allure.Step;
 public class ReusableFunctions extends utils.Reporter {
 
-	public WebDriver driver;
+	public RemoteWebDriver driver;
 	public static Properties prop;
 	public String URL, browser;
 
@@ -79,22 +82,26 @@ public class ReusableFunctions extends utils.Reporter {
 	 * @param element
 	 * @param data
 	 */
+	
+	@Step("The element {element} is typed with {data}")
 	public void typeInto(WebElement element, String data) {
 		try {
 			element.clear();
 			element.sendKeys(data);
+			takeSnap();
 		} catch (InvalidElementStateException e) {
 			e.printStackTrace();
 		}catch(WebDriverException e) {
 			e.printStackTrace();
 		}
 	}
-
+	@Step("The element {element} is clicked")
 	public void click(WebElement element){
 		try {
 			//WebDriverWait wait = new WebDriverWait(this.driver, 10);
 			//wait.until(ExpectedConditions.elementToBeClickable(element));
 			element.click();
+			takeSnap();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -102,12 +109,10 @@ public class ReusableFunctions extends utils.Reporter {
 
 	}
 
-
-
-	@Override
-	public long takeSnap() {
-		// TODO Auto-generated method stub
-		return 0;
+	@Attachment("Screenshot")
+	public byte[] takeSnap() {
+		byte[] screenshotBytes =  driver.getScreenshotAs(OutputType.BYTES);
+		return screenshotBytes; 
 	}
 
 	//Add methods above

@@ -2,11 +2,12 @@ package reusableLib;
 
 
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 
-import utils.ReadExcel;
+import utils.ExcelDataProvider;
 
 public class Orangehrm extends ReusableFunctions {
 	
@@ -50,10 +51,22 @@ public class Orangehrm extends ReusableFunctions {
 //	public void afterMethod(){
 //		//closeAllBrowsers();
 //	}
-//
-//	@DataProvider(name="fetchData")
-//	public  Object[][] getData(){
-//		return ReadExcel.getExcelData(sheetName);		
-//	}
+	
+	/**
+	 * Retrieves data from excel and stores in two dimentional object as the data type may not be string always. Remember to assign as many column
+	 * values as paramerters in @Test method
+	 * 
+	 * @param username
+	 * @param password
+	 */
+
+	@DataProvider(name="ExcelData")
+	public Object[][] dataProvider() {
+		String[][] data = ExcelDataProvider.getExcelData("TestData");
+		return data;
+		
+	}
+	
+
 
 }
