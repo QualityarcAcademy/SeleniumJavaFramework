@@ -16,14 +16,18 @@ import utils.ExcelDataProvider;
 public class Orangehrm extends ReusableFunctions {
 	public Browser browserName;
 	public String dataSheetName;
-		
+
 
 	@BeforeSuite
 	public void beforeSuite(){
 		System.out.println("****The test suite started sucessfully****");
 	}
 
-
+	/**
+	 * Opens up given browser before the test method
+	 * 
+	 * @param browser name
+	 */
 	@BeforeMethod
 	public void beforeMethod(){
 		OpenBrowser(browserName);		
@@ -34,11 +38,15 @@ public class Orangehrm extends ReusableFunctions {
 		System.out.println("****The test suite completed sucessfully****");
 	}
 
+	/**
+	 * Closes all opened browser after test is complete
+	 * 
+	 */
 	@AfterMethod
 	public void afterMethod(){
 		closeBrowser();
 	}
-	
+
 	/**
 	 * Retrieves data from excel and stores in two dimentional object as the data type may not be string always. Remember to assign as many column
 	 * values as parameters in @Test method
@@ -51,9 +59,9 @@ public class Orangehrm extends ReusableFunctions {
 	public Object[][] dataProvider() {
 		String[][] data = ExcelDataProvider.getExcelData("TestData");
 		return data;
-		
+
 	}
-	
+
 
 
 }

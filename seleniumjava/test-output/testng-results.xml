@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="4" total="7" passed="3">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="34352" started-at="2018-12-31T11:50:44Z" finished-at="2018-12-31T11:51:18Z">
+  <suite name="Suite" duration-ms="34025" started-at="2018-12-31T12:16:52Z" finished-at="2018-12-31T12:17:26Z">
     <groups>
     </groups>
-    <test name="Test" duration-ms="34352" started-at="2018-12-31T11:50:44Z" finished-at="2018-12-31T11:51:18Z">
+    <test name="Test" duration-ms="34025" started-at="2018-12-31T12:16:52Z" finished-at="2018-12-31T12:17:26Z">
       <class name="tests.TC003_ViewDashboard">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.TC003_ViewDashboard@106faf11]" name="beforeMethod" is-config="true" duration-ms="3201" started-at="2018-12-31T11:51:12Z" finished-at="2018-12-31T11:51:16Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.TC003_ViewDashboard@7692cd34]" name="beforeMethod" is-config="true" duration-ms="3325" started-at="2018-12-31T12:17:20Z" finished-at="2018-12-31T12:17:23Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="viewDashboard(java.lang.String, java.lang.String)[pri:0, instance:tests.TC003_ViewDashboard@106faf11]" name="viewDashboard" duration-ms="1954" started-at="2018-12-31T11:51:16Z" data-provider="ExcelData" finished-at="2018-12-31T11:51:18Z">
+        <test-method status="PASS" signature="viewDashboard(java.lang.String, java.lang.String)[pri:0, instance:tests.TC003_ViewDashboard@7692cd34]" name="viewDashboard" duration-ms="1695" started-at="2018-12-31T12:17:23Z" data-provider="ExcelData" finished-at="2018-12-31T12:17:25Z">
           <params>
             <param index="0">
               <value>
@@ -27,33 +27,33 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- viewDashboard -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:tests.TC003_ViewDashboard@106faf11]" name="afterMethod" is-config="true" duration-ms="910" started-at="2018-12-31T11:51:18Z" finished-at="2018-12-31T11:51:18Z">
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:tests.TC003_ViewDashboard@7692cd34]" name="afterMethod" is-config="true" duration-ms="960" started-at="2018-12-31T12:17:25Z" finished-at="2018-12-31T12:17:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
       </class> <!-- tests.TC003_ViewDashboard -->
       <class name="tests.TC001_LoginTest">
-        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:tests.TC001_LoginTest@33aa93c]" name="beforeSuite" is-config="true" duration-ms="43" started-at="2018-12-31T11:50:44Z" finished-at="2018-12-31T11:50:44Z">
+        <test-method status="PASS" signature="beforeSuite()[pri:0, instance:tests.TC001_LoginTest@33d05366]" name="beforeSuite" is-config="true" duration-ms="33" started-at="2018-12-31T12:16:52Z" finished-at="2018-12-31T12:16:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:tests.TC001_LoginTest@33aa93c]" name="setup" is-config="true" duration-ms="1" started-at="2018-12-31T11:50:44Z" finished-at="2018-12-31T11:50:44Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:tests.TC001_LoginTest@33d05366]" name="setup" is-config="true" duration-ms="0" started-at="2018-12-31T12:16:52Z" finished-at="2018-12-31T12:16:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:tests.TC003_ViewDashboard@106faf11]" name="setup" is-config="true" duration-ms="0" started-at="2018-12-31T11:50:44Z" finished-at="2018-12-31T11:50:44Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:tests.TC002_ApplyLeave@27a0a5a2]" name="setup" is-config="true" duration-ms="0" started-at="2018-12-31T12:16:52Z" finished-at="2018-12-31T12:16:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="setup()[pri:0, instance:tests.TC002_ApplyLeave@32c0915e]" name="setup" is-config="true" duration-ms="0" started-at="2018-12-31T11:50:44Z" finished-at="2018-12-31T11:50:44Z">
+        <test-method status="PASS" signature="setup()[pri:0, instance:tests.TC003_ViewDashboard@7692cd34]" name="setup" is-config="true" duration-ms="1" started-at="2018-12-31T12:16:52Z" finished-at="2018-12-31T12:16:52Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.TC001_LoginTest@33aa93c]" name="beforeMethod" is-config="true" duration-ms="8034" started-at="2018-12-31T11:50:45Z" finished-at="2018-12-31T11:50:53Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.TC001_LoginTest@33d05366]" name="beforeMethod" is-config="true" duration-ms="8199" started-at="2018-12-31T12:16:53Z" finished-at="2018-12-31T12:17:01Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="positiveLoginTest(java.lang.String, java.lang.String)[pri:0, instance:tests.TC001_LoginTest@33aa93c]" name="positiveLoginTest" duration-ms="3177" started-at="2018-12-31T11:50:53Z" data-provider="ExcelData" finished-at="2018-12-31T11:50:56Z">
+        <test-method status="PASS" signature="positiveLoginTest(java.lang.String, java.lang.String)[pri:0, instance:tests.TC001_LoginTest@33d05366]" name="positiveLoginTest" duration-ms="3131" started-at="2018-12-31T12:17:01Z" data-provider="ExcelData" finished-at="2018-12-31T12:17:04Z">
           <params>
             <param index="0">
               <value>
@@ -69,21 +69,21 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- positiveLoginTest -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:tests.TC001_LoginTest@33aa93c]" name="afterMethod" is-config="true" duration-ms="614" started-at="2018-12-31T11:50:56Z" finished-at="2018-12-31T11:50:57Z">
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:tests.TC001_LoginTest@33d05366]" name="afterMethod" is-config="true" duration-ms="612" started-at="2018-12-31T12:17:04Z" finished-at="2018-12-31T12:17:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method status="PASS" signature="afterSuite()[pri:0, instance:tests.TC001_LoginTest@33aa93c]" name="afterSuite" is-config="true" duration-ms="0" started-at="2018-12-31T11:51:18Z" finished-at="2018-12-31T11:51:18Z">
+        <test-method status="PASS" signature="afterSuite()[pri:0, instance:tests.TC001_LoginTest@33d05366]" name="afterSuite" is-config="true" duration-ms="1" started-at="2018-12-31T12:17:26Z" finished-at="2018-12-31T12:17:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
       </class> <!-- tests.TC001_LoginTest -->
       <class name="tests.TC002_ApplyLeave">
-        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.TC002_ApplyLeave@32c0915e]" name="beforeMethod" is-config="true" duration-ms="10459" started-at="2018-12-31T11:50:57Z" finished-at="2018-12-31T11:51:07Z">
+        <test-method status="PASS" signature="beforeMethod()[pri:0, instance:tests.TC002_ApplyLeave@27a0a5a2]" name="beforeMethod" is-config="true" duration-ms="10139" started-at="2018-12-31T12:17:05Z" finished-at="2018-12-31T12:17:15Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method status="PASS" signature="applyLeave(java.lang.String, java.lang.String)[pri:0, instance:tests.TC002_ApplyLeave@32c0915e]" name="applyLeave" duration-ms="4271" started-at="2018-12-31T11:51:07Z" data-provider="ExcelData" finished-at="2018-12-31T11:51:12Z">
+        <test-method status="PASS" signature="applyLeave(java.lang.String, java.lang.String)[pri:0, instance:tests.TC002_ApplyLeave@27a0a5a2]" name="applyLeave" duration-ms="4239" started-at="2018-12-31T12:17:15Z" data-provider="ExcelData" finished-at="2018-12-31T12:17:19Z">
           <params>
             <param index="0">
               <value>
@@ -99,7 +99,7 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- applyLeave -->
-        <test-method status="PASS" signature="afterMethod()[pri:0, instance:tests.TC002_ApplyLeave@32c0915e]" name="afterMethod" is-config="true" duration-ms="692" started-at="2018-12-31T11:51:12Z" finished-at="2018-12-31T11:51:12Z">
+        <test-method status="PASS" signature="afterMethod()[pri:0, instance:tests.TC002_ApplyLeave@27a0a5a2]" name="afterMethod" is-config="true" duration-ms="720" started-at="2018-12-31T12:17:19Z" finished-at="2018-12-31T12:17:20Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->

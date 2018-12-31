@@ -25,10 +25,16 @@ import org.testng.Reporter;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Attachment;
 import io.qameta.allure.Step;
-public class ReusableFunctions extends utils.Reporter {
+public class ReusableFunctions{
 
 	public RemoteWebDriver driver;
 	public String URL, browser;
+	
+	/**
+	 * 
+	 * constructor load all global properties
+	 * 
+	 */
 
 	public ReusableFunctions(){
 		Properties prop = new Properties();
@@ -129,7 +135,7 @@ public class ReusableFunctions extends utils.Reporter {
 	}
 	
 	/**
-	 * Closes all browser instance
+	 * Method that closes browser instance
 	 * 
 	 */
 	public void closeBrowser() {
