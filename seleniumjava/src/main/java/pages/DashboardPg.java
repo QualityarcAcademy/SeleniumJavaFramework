@@ -35,9 +35,10 @@ public class DashboardPg extends Orangehrm {
 	 */
 
 	public DashboardPg clickOnAssignLeave() {
-		click(AssignLeaveLink);
+		click(driver,AssignLeaveLink);
 		return this;
 	}
 
+	//TO-DO Add more web elements and methods 
 	
 }

@@ -5,6 +5,7 @@
     <classes>
       <class name="tests.TC001_LoginTest"/>
       <class name="tests.TC002_ApplyLeave"/>
+      <class name="tests.TC003_ViewDashboard"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->

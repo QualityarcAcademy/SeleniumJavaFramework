@@ -51,7 +51,7 @@ public class LoginPg extends Orangehrm{
 
 
 	public DashboardPg clickLoginBtn() {
-		click(Login);
+		click(driver,Login);
 		return new DashboardPg(driver);
 	}
 

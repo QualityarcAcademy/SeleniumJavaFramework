@@ -1,7 +1,11 @@
 package reusableLib;
 
 
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.DataProvider;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -10,51 +14,34 @@ import com.aventstack.extentreports.reporter.ExtentHtmlReporter;
 import utils.ExcelDataProvider;
 
 public class Orangehrm extends ReusableFunctions {
-	
-	public String browserName;
-	public String sheetName;
-	
-	@BeforeMethod
-	public void SampleReport() {
-		 ExtentHtmlReporter html = new ExtentHtmlReporter("./Reports/Extent.html");
-		 ExtentReports extent = new ExtentReports();
-		 extent.attachReporter(html);
-		 extent.createTest("OranceHRM").pass("Test Passed");
-		 extent.flush();
+	public Browser browserName;
+	public String dataSheetName;
+		
 
+	@BeforeSuite
+	public void beforeSuite(){
+		System.out.println("****The test suite started sucessfully****");
 	}
 
-//	@BeforeSuite
-//	public void beforeSuite(){
-//		startResult();
-//	}
-//
-//	@BeforeClass
-//	public void beforeClass(){		
-//		startTestModule(testCaseName, testDescription);	
-//	}
-//
-//	@BeforeMethod
-//	public void beforeMethod(){
-//		test = startTestCase(testNodes);
-//		test.assignCategory(category);
-//		test.assignAuthor(authors);
-//		OpenApp();		
-//	}
-//
-//	@AfterSuite
-//	public void afterSuite(){
-//		endResult();
-//	}
-//
-//	@AfterMethod
-//	public void afterMethod(){
-//		//closeAllBrowsers();
-//	}
+
+	@BeforeMethod
+	public void beforeMethod(){
+		OpenBrowser(browserName);		
+	}
+
+	@AfterSuite
+	public void afterSuite(){
+		System.out.println("****The test suite completed sucessfully****");
+	}
+
+	@AfterMethod
+	public void afterMethod(){
+		closeBrowser();
+	}
 	
 	/**
 	 * Retrieves data from excel and stores in two dimentional object as the data type may not be string always. Remember to assign as many column
-	 * values as paramerters in @Test method
+	 * values as parameters in @Test method
 	 * 
 	 * @param username
 	 * @param password

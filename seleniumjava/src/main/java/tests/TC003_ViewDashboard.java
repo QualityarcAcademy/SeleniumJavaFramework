@@ -9,17 +9,17 @@ import reusableLib.ReusableFunctions.Browser;
 import utils.ExcelDataProvider;
 
 
-public class TC002_ApplyLeave extends Orangehrm{
+public class TC003_ViewDashboard extends Orangehrm{
 
 	@BeforeTest
 	public void setup() {
-		browserName = Browser.FIREFOX;
+		browserName = Browser.EDGE;
 		dataSheetName = "Sheet1";
 
 	}
 
 	@Test(dataProvider="ExcelData")
-	public void applyLeave(String username, String password) {
+	public void viewDashboard(String username, String password) {
 		new LoginPg(driver)
 		.enterUsername(username)
 		.enterPassword(password)

@@ -28,7 +28,6 @@ import io.qameta.allure.Step;
 public class ReusableFunctions extends utils.Reporter {
 
 	public RemoteWebDriver driver;
-	public static Properties prop;
 	public String URL, browser;
 
 	public ReusableFunctions(){
@@ -41,16 +40,30 @@ public class ReusableFunctions extends utils.Reporter {
 			e.printStackTrace();
 		}
 		URL = prop.getProperty("URL");
-		browser = prop.getProperty("Browser");
 
 	}
 
-	public WebDriver OpenBrowser() {
-		if(browser.equalsIgnoreCase("Chrome")) {
+	/**
+	 * 
+	 * Browser Enum - Current implementation has Chrome, Firefox and Edge
+	 */
+
+	public enum Browser{CHROME, FIREFOX, EDGE}
+
+	/**
+	 * Opens up given Browser. 
+	 * Change the desired browser in the global.properties file 
+	 * 
+	 * @param browser Enum 
+	 * @return browser instance 
+	 */
+
+	public WebDriver OpenBrowser(Browser browser) {
+		if(browser == browser.CHROME) {
 			//System.setProperty("webdriver.chrome.driver", "../drivers/chromedriver_win32/chromedriver.exe");
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
-		}else if(browser.equalsIgnoreCase("Firefox")) {
+		}else if(browser == browser.FIREFOX) {
 			WebDriverManager.firefoxdriver().setup();
 			driver = new FirefoxDriver();
 		}else {
@@ -64,26 +77,14 @@ public class ReusableFunctions extends utils.Reporter {
 
 	}
 
-	public void loadWebObject() {
-		prop = new Properties();
-		try {
-			prop.load(new FileInputStream(new File("./src/main/resources/object.properties")));
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
-	
-	
 	/**
 	 * Method used to type in given data into text fields
 	 * 
 	 * @param element
 	 * @param data
 	 */
-	
-	@Step("The element {element} is typed with {data}")
+
+	@Step("The element is typed with {data}")
 	public void typeInto(WebElement element, String data) {
 		try {
 			element.clear();
@@ -95,27 +96,51 @@ public class ReusableFunctions extends utils.Reporter {
 			e.printStackTrace();
 		}
 	}
-	@Step("The element {element} is clicked")
-	public void click(WebElement element){
+	
+	/**
+	 * Method used to click given element 
+	 * 
+	 * @param element
+	 */
+	
+	@Step("The element is clicked")
+	public void click(RemoteWebDriver driver, WebElement element){
 		try {
-			//WebDriverWait wait = new WebDriverWait(this.driver, 10);
-			//wait.until(ExpectedConditions.elementToBeClickable(element));
+			WebDriverWait wait = new WebDriverWait(driver, 10);
+			wait.until(ExpectedConditions.elementToBeClickable(element));
 			element.click();
 			takeSnap();
-		} catch (Exception e) {
+		} catch (WebDriverException e) {
 			e.printStackTrace();
 		}
-		
+
 
 	}
+	
+	/**
+	 * Captures screenshot and attaches to allure reporting
+	 * @return
+	 */
 
 	@Attachment("Screenshot")
 	public byte[] takeSnap() {
 		byte[] screenshotBytes =  driver.getScreenshotAs(OutputType.BYTES);
 		return screenshotBytes; 
 	}
+	
+	/**
+	 * Closes all browser instance
+	 * 
+	 */
+	public void closeBrowser() {
+		try {
+			driver.quit();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
 
-	//Add methods above
+	//Add more actions 
 }
 
 

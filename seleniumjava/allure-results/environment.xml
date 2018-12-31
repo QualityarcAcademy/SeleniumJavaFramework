@@ -1,0 +1,14 @@
+<environment>
+    <parameter>
+        <key>Browser</key>
+        <value>Chrome</value>
+    </parameter>
+    <parameter>
+        <key>Browser.Version</key>
+        <value>71.0.3578.98</value>
+    </parameter>
+    <parameter>
+        <key>Stand</key>
+        <value>SIT Environment</value>
+    </parameter>
+</environment>
