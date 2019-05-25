@@ -17,8 +17,6 @@ public class TC001_LoginTest extends Orangehrm{
 		dataSheetName = "Sheet1";
 		
 	}
-	
-	
 
 	@Test(dataProvider="ExcelData")
 	public void positiveLoginTest(String username, String password) {

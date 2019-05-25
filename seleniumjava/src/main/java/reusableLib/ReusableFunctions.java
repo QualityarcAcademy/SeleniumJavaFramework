@@ -5,8 +5,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
-
-import org.openqa.selenium.By;
 import org.openqa.selenium.InvalidElementStateException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
@@ -15,13 +13,9 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Reporter;
-
 import io.github.bonigarcia.wdm.WebDriverManager;
 import io.qameta.allure.Attachment;
 import io.qameta.allure.Step;
@@ -32,7 +26,7 @@ public class ReusableFunctions{
 	
 	/**
 	 * 
-	 * constructor load all global properties
+	 * Constructor load all global properties
 	 * 
 	 */
 
@@ -67,7 +61,7 @@ public class ReusableFunctions{
 	public WebDriver OpenBrowser(Browser browser) {
 		if(browser == browser.CHROME) {
 			//System.setProperty("webdriver.chrome.driver", "../drivers/chromedriver_win32/chromedriver.exe");
-			WebDriverManager.chromedriver().setup();
+			WebDriverManager.chromedriver().version("74.0.3729.6").setup();
 			driver = new ChromeDriver();
 		}else if(browser == browser.FIREFOX) {
 			WebDriverManager.firefoxdriver().setup();
