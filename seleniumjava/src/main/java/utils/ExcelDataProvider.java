@@ -8,7 +8,7 @@ import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 /**
- * Reads given excel rows and columns and stores in a two dimentional array
+ * Reads given excel rows and columns and stores in a two dimensional array
  * 
  * @param excelsheet only 
  *

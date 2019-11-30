@@ -1,38 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite thread-count="3" guice-stage="DEVELOPMENT" name="Failed suite [Suite]" parallel="methods">
-  <test thread-count="3" name="Test(failed)" parallel="methods">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="tests.TC003_ViewDashboard">
-        <methods>
-          <include name="viewDashboard"/>
-          <include name="beforeMethod"/>
-          <include name="beforeSuite"/>
-          <include name="setup"/>
-          <include name="afterMethod"/>
-          <include name="afterSuite"/>
-        </methods>
-      </class> <!-- tests.TC003_ViewDashboard -->
-      <class name="tests.TC001_LoginTest">
-        <methods>
-          <include name="setup"/>
-          <include name="beforeMethod"/>
-          <include name="beforeSuite"/>
-          <include name="afterMethod"/>
-          <include name="afterSuite"/>
-          <include name="positiveLoginTest"/>
-        </methods>
-      </class> <!-- tests.TC001_LoginTest -->
       <class name="tests.TC002_ApplyLeave">
         <methods>
           <include name="applyLeave"/>
           <include name="beforeMethod"/>
-          <include name="setup"/>
           <include name="beforeSuite"/>
+          <include name="setup"/>
           <include name="afterMethod"/>
           <include name="afterSuite"/>
         </methods>
       </class> <!-- tests.TC002_ApplyLeave -->
     </classes>
-  </test> <!-- Test(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

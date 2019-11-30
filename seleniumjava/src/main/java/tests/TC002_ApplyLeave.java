@@ -13,7 +13,7 @@ public class TC002_ApplyLeave extends Orangehrm{
 
 	@BeforeTest
 	public void setup() {
-		browserName = Browser.FIREFOX;
+		browserName = Browser.CHROME;
 		dataSheetName = "Sheet1";
 
 	}

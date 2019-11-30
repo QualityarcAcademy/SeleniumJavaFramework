@@ -3,6 +3,7 @@ package pages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.FindBys;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 import reusableLib.Orangehrm;
@@ -22,6 +23,7 @@ public class LoginPg extends Orangehrm{
 	 * 
 	 */
 
+	
 	@FindBy(how=How.ID,using="txtUsername") 
 	private WebElement Username;
 
@@ -30,6 +32,9 @@ public class LoginPg extends Orangehrm{
 
 	@FindBy(how=How.ID, using = "btnLogin") 
 	private WebElement Login;
+	
+	@FindBy(how= How.LINK_TEXT, using = "text") 
+	private WebElement ForgotPassword;
 
 	/**
 	 * Stores all login page actions (Object's methods )
@@ -54,5 +59,5 @@ public class LoginPg extends Orangehrm{
 		click(driver,Login);
 		return new DashboardPg(driver);
 	}
-
+	
 }

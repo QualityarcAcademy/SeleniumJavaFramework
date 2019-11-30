@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.InvalidElementStateException;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
@@ -22,7 +23,7 @@ import io.qameta.allure.Step;
 public class ReusableFunctions{
 
 	public RemoteWebDriver driver;
-	public String URL, browser;
+	public String URL;
 	
 	/**
 	 * 
@@ -61,7 +62,8 @@ public class ReusableFunctions{
 	public WebDriver OpenBrowser(Browser browser) {
 		if(browser == browser.CHROME) {
 			//System.setProperty("webdriver.chrome.driver", "../drivers/chromedriver_win32/chromedriver.exe");
-			WebDriverManager.chromedriver().version("74.0.3729.6").setup();
+			//WebDriverManager.chromedriver().version("74.0.3729.6").setup();
+			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 		}else if(browser == browser.FIREFOX) {
 			WebDriverManager.firefoxdriver().setup();
@@ -88,6 +90,7 @@ public class ReusableFunctions{
 	public void typeInto(WebElement element, String data) {
 		try {
 			element.clear();
+			element.click();
 			element.sendKeys(data);
 			takeSnap();
 		} catch (InvalidElementStateException e) {
@@ -132,10 +135,28 @@ public class ReusableFunctions{
 	 * Method that closes browser instance
 	 * 
 	 */
+	
 	public void closeBrowser() {
 		try {
 			driver.quit();
 		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * Method that switches to a frame
+	 * 
+	 */
+	
+	@Step("Switched to the frame using {frameElement}")
+	public void switchToFrame(WebElement frameElement) {
+		try {
+			driver.switchTo().frame(frameElement);
+			takeSnap();
+		} catch (NoSuchElementException e) {
+			// TODO Auto-generated catch block
+			System.out.println("Could not switch to frame using "+frameElement);
 			e.printStackTrace();
 		}
 	}

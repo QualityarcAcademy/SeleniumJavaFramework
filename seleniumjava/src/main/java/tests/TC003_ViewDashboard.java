@@ -13,7 +13,7 @@ public class TC003_ViewDashboard extends Orangehrm{
 
 	@BeforeTest
 	public void setup() {
-		browserName = Browser.EDGE;
+		browserName = Browser.CHROME;
 		dataSheetName = "Sheet1";
 
 	}
